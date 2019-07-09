@@ -35,6 +35,11 @@ pods剛啟動需要等待大約1分鐘的時間
 ![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/rabbit-management.png)
 
 
+執行 `./start.sh` 開始ptt爬蟲，執行 `./watch.sh` 查看爬蟲過程
+![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/k8s-start.gif)
+按 `Ctrl+C` 退出查看。
+
+
 
 ## Note
 
@@ -48,5 +53,3 @@ pods剛啟動需要等待大約1分鐘的時間
 
 2. 刪除本示範<br></br>
 執行 `./delete.sh` 即可清空剛剛建立的 pods, services, container...
-
-  
