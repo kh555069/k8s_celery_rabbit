@@ -35,7 +35,7 @@ pods剛啟動需要等待大約1分鐘的時間
 ![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/rabbit-management.png)
 
 
-執行 `./start.sh` 開始ptt爬蟲，執行 `./watch.sh` 查看爬蟲過程 (下方是 gif 請耐心等候~
+執行 `./start.sh` 開始ptt爬蟲，執行 `./watch_log.sh` 查看爬蟲過程 (下方是 gif 請耐心等候~
 ![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/k8s-start.gif)
 按 `Ctrl+C` 退出查看。
 
