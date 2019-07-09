@@ -21,7 +21,7 @@ virtualbox 安裝: https://tecadmin.net/install-oracle-virtualbox-on-ubuntu/
 ## Start
 執行 `./build.sh` 就能完成部署
 
-build 完之後可以透過 `kubectl get pods` 查看 pods 狀況 (下方是 gif 請耐心等候~
+build 完之後可以透過 `kubectl get pods` 查看 pods 狀況
 ![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/get-pods.png)
 
 pods剛啟動需要等待大約1分鐘的時間
@@ -35,7 +35,7 @@ pods剛啟動需要等待大約1分鐘的時間
 ![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/rabbit-management.png)
 
 
-執行 `./start.sh` 開始ptt爬蟲，執行 `./watch.sh` 查看爬蟲過程
+執行 `./start.sh` 開始ptt爬蟲，執行 `./watch.sh` 查看爬蟲過程 (下方是 gif 請耐心等候~
 ![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/k8s-start.gif)
 按 `Ctrl+C` 退出查看。
 
