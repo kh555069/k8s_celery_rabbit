@@ -22,21 +22,21 @@ virtualbox 安裝: https://tecadmin.net/install-oracle-virtualbox-on-ubuntu/
 執行 `./build.sh` 就能完成部署
 
 build 完之後可以透過 `kubectl get pods` 查看 pods 狀況
-![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/get-pods.png)
+![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/pictures/get-pods.png)
 
 pods剛啟動需要等待大約1分鐘的時間
-![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/watch.png)
+![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/pictures/watch.png)
 
 
 執行 `minikube ip` 查詢 ip ，沒意外應該是 `192.168.99.100`
 
 到 http://192.168.99.100:30002 就能看到 celery 的狀況。
 (帳號密碼皆為 guest)
-![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/rabbit-management.png)
+![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/pictures/rabbit-management.png)
 
 
 執行 `./start.sh` 開始ptt爬蟲，執行 `./watch_log.sh` 查看爬蟲過程 (下方是 gif 請耐心等候~
-![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/k8s-start.gif)
+![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/pictures/k8s-start.gif)
 按 `Ctrl+C` 退出查看。
 
 
@@ -46,7 +46,7 @@ pods剛啟動需要等待大約1分鐘的時間
 1. 如果想產生兩個 celery worker 可透過<br></br>
   `kubectl scale replicationcontroller --replicas 2 celery-controller` <br></br>
 達到 scale up
-![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/scale-up.png)<br></br>
+![image](https://github.com/kh555069/k8s_celery_rabbit/blob/master/pictures/scale-up.png)<br></br>
 或是將 `./kubefile/celery-controller.yaml` 中的 `replicas: 1`  改成 2
 
 
