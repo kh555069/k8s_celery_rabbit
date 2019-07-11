@@ -20,5 +20,6 @@ fi
 
 eval $(minikube docker-env)
 docker build -t celery-rabbit:k8s ./task
+docker pull mongo:4.1 && docker run --name mongo -p 27017:27017 -d mongo:4.1
 eval $(minikube docker-env -u)
 kubectl create -f ./kubefile

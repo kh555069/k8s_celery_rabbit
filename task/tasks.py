@@ -2,17 +2,23 @@ from celery import Celery
 import requests
 from bs4 import BeautifulSoup
 import re
+import pymongo
 app = Celery('tasks')
 
 home_url = 'https://www.ptt.cc'
+# connect to mongodb
+client = pymongo.MongoClient('localhost', 27017)
+db = client['ptt_crawler_db']
+collection = db['ptt_crawler_collection']
+
 @app.task
 def crawler():
     url = 'https://www.ptt.cc/bbs/forsale/index.html'
-    page.delay(url)
-    page_number = int( re.search(r'index(\d+)', doc.select('a.btn.wide')[1]['href']).group(1) )
     res = requests.get(url)
     soup = BeautifulSoup(res.text, 'lxml')
-    for pg in range(page_number, page_number-3, -1):
+    page_number = int( re.search(r'index(\d+)', soup.select('a.btn.wide')[1]['href']).group(1) )
+
+    for pg in range(page_number+1, page_number-3, -1):
         page_url = home_url + '/bbs/forsale/index{}.html'.format(pg)
         page.delay(page_url)
 
@@ -33,4 +39,4 @@ def article(data):
     item_soup = BeautifulSoup(item_res.text, 'lxml')
     data['content'] = item_soup.select('#main-content')[0].text.strip()
     print( data['title'] )
-    print( data['url'] )
+    collection.insert_one(data)

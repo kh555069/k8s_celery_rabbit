@@ -25,4 +25,5 @@ done
 
 eval $(minikube docker-env)
 docker rmi celery-rabbit:k8s
+docker stop mongo && docker rm mongo && docker rmi mongo:4.1
 eval $(minikube docker-env -u)
