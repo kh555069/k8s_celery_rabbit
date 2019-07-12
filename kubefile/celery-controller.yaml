@@ -20,3 +20,12 @@ spec:
         resources:
           limits:
             cpu: 100m
+      - name: mongo
+        image: mongo:4.1
+        command:  
+        - mongod 
+        - "--bind_ip_all"
+        - "--replSet"
+        - rs0
+        ports: 
+        - containerPort: 27017
