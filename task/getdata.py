@@ -7,5 +7,5 @@ collection = db['ptt_crawler_collection']
 for data in collection.find():
     print('title: '+data['title'])
     print('url: '+data['url'])
-    print('content: '+data['content'][:50])
+    print('content: '+data['content'][:60])
     print()
