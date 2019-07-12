@@ -1,5 +1,11 @@
 # k8s-celery-rabbit
 
+## 更新
+### 20190712
+* 新增 MongoDB container ，儲存抓下來的資料，以及簡單讀取MongoDB資料的 script
+
+******
+
 使用 kubernetes 達成快速部署分散式爬蟲
 
 透過 virtualbox 用 minikube 來跑單一節點的 kubernetes cluster，其中有3個yaml檔 rabbitmq-service.yaml rabbitmq-controller.yaml , celery-rabbitmq.yaml 取自 https://github.com/kubernetes/kubernetes/tree/release-1.1/examples/celery-rabbitmq
